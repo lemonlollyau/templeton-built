@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+__pycache__/
+*.pyc
+*.log
+*.sql
+*.sql.gz
+wp-config.php
+.env
+.env.*
+*.zip

@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/home-renovations-adelaide", "destination": "/renovations", "permanent": true },
+    { "source": "/house-extensions-adelaide", "destination": "/extensions", "permanent": true },
+    { "source": "/custom-new-homes", "destination": "/custom-homes", "permanent": true },
+    { "source": "/property-development-adelaide", "destination": "/custom-homes", "permanent": true },
+    { "source": "/commercial-builders-adelaide", "destination": "/", "permanent": true },
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/download-renovation-guide", "destination": "/cost-benchmark", "permanent": true },
+    { "source": "/download-brochure", "destination": "/architect-guide", "permanent": true }
+  ]
+}
