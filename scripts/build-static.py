@@ -225,11 +225,21 @@ def prune(keep):
     report["assets_freed_mb"] = round(freed / 1e6, 1)
 
 
+def copy_vercel_config():
+    """Vercel's Root Directory is site/, so it reads site/vercel.json - not the
+    one at the repo root. Root stays the editable source; this mirrors it in."""
+    src = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "vercel.json")
+    if os.path.exists(src):
+        shutil.copy2(src, os.path.join(OUT, "vercel.json"))
+        report["notes"].append("Copied vercel.json into the build")
+
+
 if __name__ == "__main__":
     reset()
     drop_stubs()
     rewrite_html()
     rewrite_sitemaps()
+    copy_vercel_config()
     keep = collect_refs()
     report["assets_kept"] = len(keep)
     prune(keep)

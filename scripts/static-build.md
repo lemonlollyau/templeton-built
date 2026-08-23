@@ -41,3 +41,9 @@ Result: 37 pages, 200 files, 28 MB.
 - no `ll-build` left in any HTML
 - every `href`/`src` resolves to a file that exists
 - canonicals absolute
+
+## `vercel.json` lives in two places
+
+Vercel's Root Directory is `site`, so Vercel reads **`site/vercel.json`** and
+ignores the one at the repo root. Edit the root copy — `build-static.py` mirrors
+it into the build. If you hand-edit `site/vercel.json`, the next build overwrites it.
