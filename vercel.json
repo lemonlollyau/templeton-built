@@ -16,6 +16,25 @@
     { "source": "/second-story-modular-addition", "destination": "/extensions", "permanent": true },
     { "source": "/adelaide-restoration-centre", "destination": "/renovations", "permanent": true },
     { "source": "/adelaide-construction-companies", "destination": "/", "permanent": true },
-    { "source": "/benefits-of-boutique-builders-adelaide", "destination": "/boutique-builders-adelaide", "permanent": true }
+    { "source": "/benefits-of-boutique-builders-adelaide", "destination": "/boutique-builders-adelaide", "permanent": true },
+
+    { "source": "/building-by-design", "destination": "/custom-homes", "permanent": true },
+    { "source": "/custom-home-builders-adelaide", "destination": "/custom-homes", "permanent": true },
+    { "source": "/home-extensions-adelaide", "destination": "/extensions", "permanent": true },
+    { "source": "/second-storey-extension-cost", "destination": "/extensions", "permanent": true },
+    { "source": "/knockdown-rebuild-adelaide", "destination": "/custom-homes", "permanent": true },
+
+    { "source": "/journal/:slug", "destination": "/:slug", "permanent": true },
+    { "source": "/author/:slug", "destination": "/about", "permanent": true },
+
+    { "source": "/category/custom-homes", "destination": "/custom-homes", "permanent": true },
+    { "source": "/category/extensions", "destination": "/extensions", "permanent": true },
+    { "source": "/category/renovations", "destination": "/renovations", "permanent": true },
+    { "source": "/category/knockdown-rebuild", "destination": "/custom-homes", "permanent": true },
+    { "source": "/category/costs", "destination": "/journal", "permanent": true },
+    { "source": "/category/uncategorized", "destination": "/journal", "permanent": true },
+
+    { "source": "/feed", "destination": "/journal", "permanent": true },
+    { "source": "/comments/feed", "destination": "/journal", "permanent": true }
   ]
 }
