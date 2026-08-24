@@ -152,7 +152,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 				
 				
 				
-				<div class="et_pb_code_inner"><section class="phero phero-plain"><div class="wrap phero-in"><span class="label">Journal</span><h1>Notes from the site.</h1><p class="phero-sub">What we've learned building in Adelaide — written for people about to spend a significant amount of money and wanting to spend it well.</p> </div></section></div>
+				<div class="et_pb_code_inner"><section class="phero phero-plain"><div class="wrap phero-in"><span class="label">Journal</span><h1 data-juice-key="phero_heading">Notes from the site.</h1><p data-juice-key="phero_body" class="phero-sub">What we've learned building in Adelaide — written for people about to spend a significant amount of money and wanting to spend it well.</p> </div></section></div>
 			</div>
 			</div>
 				
@@ -180,7 +180,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 				
 				
 				
-				<div class="et_pb_code_inner"><section class="stone pad-sm"><div class="wrap" style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center"><div class="rev"><span class="label">Start here</span><h2 style="max-width:20ch;margin-top:16px">Thinking about a project?</h2><p class="muted" style="margin-top:16px;max-width:48ch">A first conversation costs nothing and is usually more useful than another evening of research.</p> </div><a href="/contact" class="btn btn-solid rev">Book A Conversation</a></div></section></div>
+				<div class="et_pb_code_inner"><section class="stone pad-sm"><div class="wrap" style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center"><div class="rev"><span class="label">Start here</span><h2 data-juice-key="stone_heading" style="max-width:20ch;margin-top:16px">Thinking about a project?</h2><p data-juice-key="stone_body" class="muted" style="margin-top:16px;max-width:48ch">A first conversation costs nothing and is usually more useful than another evening of research.</p> </div><a href="/contact" class="btn btn-solid rev">Book A Conversation</a></div></section></div>
 			</div>
 			</div>
 				
@@ -277,6 +277,18 @@ var et_pb_box_shadow_elements = [];
     io.observe(s);
   });
 })();
+</script>
+<script>
+  window.JUICE_REVIEW_CONFIG = { allowedOrigins: ["https://lemon-lolly-flow.base44.app"] };
+</script>
+<script>
+  /* Review bridge: preview hosts only, never the live domain. */
+  if (/(^|\.)vercel\.app$/.test(location.hostname)) {
+    var j = document.createElement("script");
+    j.src = "https://lemon-lolly-flow.base44.app/juice-review-bridge.js";
+    j.async = true;
+    document.body.appendChild(j);
+  }
 </script>
 </body>
 </html>

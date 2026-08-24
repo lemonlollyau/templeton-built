@@ -47,3 +47,21 @@ Result: 37 pages, 200 files, 28 MB.
 Vercel's Root Directory is `site`, so Vercel reads **`site/vercel.json`** and
 ignores the one at the repo root. Edit the root copy — `build-static.py` mirrors
 it into the build. If you hand-edit `site/vercel.json`, the next build overwrites it.
+
+## The JUICE review bridge
+
+`scripts/add-review-bridge.py` installs the lemonlolly Review Room bridge:
+
+- Tags headings and body copy inside the designed sections with stable
+  `data-juice-key` attributes. Only content inside Divi Code modules is
+  touched — Divi chrome, WordPress post meta and the legacy article sidebars
+  are skipped. Keys are named from the section's `id` where it has one
+  (`hero_heading`, `openbook_body`) and by position where it doesn't
+  (`s4_heading`), so a key never changes when its text is edited.
+- Inserts the loader before `</body>`, wrapped in a hostname check so the
+  bridge runs on `*.vercel.app` **only**. Once `templetonbuilt.com.au` points
+  at Vercel, real visitors never load it. To review on the live domain, widen
+  that check.
+
+The script is idempotent — it skips elements that already carry a key and
+pages that already have the loader.
