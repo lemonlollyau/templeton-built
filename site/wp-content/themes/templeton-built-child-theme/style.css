@@ -100,8 +100,13 @@ p{margin:0 0 1.1em}
 }
 .nav.solid{background:rgba(251,250,248,.96);border-bottom-color:var(--rule);padding:14px 0;backdrop-filter:blur(8px)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo img{height:34px;width:auto;transition:filter .35s}
-.nav.over:not(.solid) .logo img{filter:brightness(0) invert(1)}
+.logo img{height:40px;width:auto;transition:filter .35s}
+/* Wordmark asset is white: no filter over dark heroes, inverted to ink on light backgrounds. */
+.nav.over:not(.solid) .logo img{filter:none}
+.nav.solid .logo img{filter:brightness(0)}
+.lp-nav .logo img{filter:brightness(0);height:36px}
+@media(max-width:600px){.logo img{height:32px}.lp-nav .logo img{height:30px}}
+
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{
   font-family:var(--label-font);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
