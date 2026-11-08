@@ -379,3 +379,37 @@ form .btn{justify-content:center;margin-top:10px;font-family:var(--label-font)}
   .rev{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* ---------- Light page hero (Journal, articles, thank-you) ----------
+   .phero-plain sets a paper background, but .phero::after was still
+   painting the dark gradient over it. Drop the overlay and flip the
+   transparent nav to ink so it stays legible on the light hero. */
+.phero-plain::after{display:none}
+.phero-plain{border-bottom:1px solid var(--rule)}
+body:has(.phero-plain) .nav.over:not(.solid) .logo img{filter:brightness(0)}
+body:has(.phero-plain) .nav.over:not(.solid) .nav-toggle{color:var(--bluestone)}
+@media(min-width:901px){
+  body:has(.phero-plain) .nav.over:not(.solid) .nav-links a{color:var(--bluestone)}
+  body:has(.phero-plain) .nav.over:not(.solid) .nav-cta{border-color:var(--rule)}
+}
+@media(max-width:900px){
+  body:has(.phero-plain) .nav.over:not(.solid) .nav-toggle.open{color:var(--paper)}
+}
+
+/* ---------- Migrated articles: drop the Divi blog chrome ----------
+   These pages came across on Divi's single-post template, which boxed
+   the designed sections into a narrow blog column with a widget
+   sidebar. The designed sections run full width, as on every other
+   page; the sidebar and the divider rule are not part of the design. */
+body.single-post #main-content .container{width:100%;max-width:100%;padding-top:0}
+body.single-post #main-content .container:before{display:none}
+body.single-post #left-area{width:100%!important;float:none;padding:0}
+body.single-post #sidebar{display:none}
+body.single-post article.et_pb_post .entry-content{padding-top:0}
+
+/* ---------- Inline two-column bands collapse on phones ----------
+   Several sections carry an inline grid-template-columns:1fr auto,
+   which an inline style keeps in force at every width. Stack them. */
+@media(max-width:700px){
+  [style*="grid-template-columns:1fr auto"]{grid-template-columns:1fr!important;gap:24px!important}
+}
