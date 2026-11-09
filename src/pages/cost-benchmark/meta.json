@@ -1,0 +1,31 @@
+{
+  "slug": "cost-benchmark",
+  "title": "The Adelaide cost benchmark. \u2014 Templeton Built",
+  "description": "Real cost ranges for custom homes, extensions and renovations across Adelaide \u2014 what sits inside each figure, and what almost every quote leaves out.",
+  "canonical": "https://templetonbuilt.com.au/cost-benchmark",
+  "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "og": {
+    "locale": "en_US",
+    "type": "article",
+    "title": "The Adelaide cost benchmark. \u2014 Templeton Built",
+    "description": "Real cost ranges for custom homes, extensions and renovations across Adelaide \u2014 what sits inside each figure, and what almost every quote leaves out.",
+    "url": "https://templetonbuilt.com.au/cost-benchmark",
+    "site_name": "Templeton Built",
+    "updated_time": "2026-08-17T11:20:44+00:00",
+    "image": "https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg",
+    "image:secure_url": "https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg",
+    "image:alt": "The Adelaide Cost Benchmark"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "The Adelaide cost benchmark. \u2014 Templeton Built",
+    "description": "Real cost ranges for custom homes, extensions and renovations across Adelaide \u2014 what sits inside each figure, and what almost every quote leaves out.",
+    "image": "https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg"
+  },
+  "schema": [
+    "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"GeneralContractor\",\"Organization\"],\"@id\":\"https://templetonbuilt.com.au/#organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"openingHours\":[\"Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00\"]},{\"@type\":\"WebSite\",\"@id\":\"https://templetonbuilt.com.au/#website\",\"url\":\"https://templetonbuilt.com.au\",\"name\":\"Templeton Built\",\"alternateName\":\"Templeton Built Pty Ltd\",\"publisher\":{\"@id\":\"https://templetonbuilt.com.au/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg\",\"url\":\"https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://templetonbuilt.com.au/cost-benchmark/#webpage\",\"url\":\"https://templetonbuilt.com.au/cost-benchmark/\",\"name\":\"The Adelaide cost benchmark. \\u2014 Templeton Built\",\"datePublished\":\"2026-08-13T00:22:23+00:00\",\"dateModified\":\"2026-08-17T11:20:44+00:00\",\"isPartOf\":{\"@id\":\"https://templetonbuilt.com.au/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://templetonbuilt.com.au/author/lemonlolly/\",\"name\":\"lemonlolly\",\"url\":\"https://templetonbuilt.com.au/author/lemonlolly/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/248df2e50c1666030155a5385d356da3438279e905b744e17b4cc4a9ce5fac36?s=96&amp;d=mm&amp;r=g\",\"url\":\"https://secure.gravatar.com/avatar/248df2e50c1666030155a5385d356da3438279e905b744e17b4cc4a9ce5fac36?s=96&amp;d=mm&amp;r=g\",\"caption\":\"lemonlolly\",\"inLanguage\":\"en-US\"},\"sameAs\":[\"https://templetonbuilt.com.au\"],\"worksFor\":{\"@id\":\"https://templetonbuilt.com.au/#organization\"}},{\"@type\":\"Article\",\"headline\":\"The Adelaide cost benchmark. \\u2014 Templeton Built\",\"datePublished\":\"2026-08-13T00:22:23+00:00\",\"dateModified\":\"2026-08-17T11:20:44+00:00\",\"author\":{\"@id\":\"https://templetonbuilt.com.au/author/lemonlolly/\",\"name\":\"lemonlolly\"},\"publisher\":{\"@id\":\"https://templetonbuilt.com.au/#organization\"},\"description\":\"Real cost ranges for custom homes, extensions and renovations across Adelaide \\u2014 what sits inside each figure, and what almost every quote leaves out.\",\"name\":\"The Adelaide cost benchmark. \\u2014 Templeton Built\",\"@id\":\"https://templetonbuilt.com.au/cost-benchmark/#richSnippet\",\"isPartOf\":{\"@id\":\"https://templetonbuilt.com.au/cost-benchmark/#webpage\"},\"image\":{\"@id\":\"https://templetonbuilt.com.au/wp-content/uploads/2025/06/Kitchen-Pantry-1024x686.jpg\"},\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https://templetonbuilt.com.au/cost-benchmark/#webpage\"}}]}"
+  ],
+  "is_article": false,
+  "nav": true,
+  "foot_top": false
+}
