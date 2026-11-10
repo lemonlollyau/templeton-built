@@ -45,6 +45,13 @@
 .od-addr{border-left:2px solid var(--bluestone);padding-left:22px;margin:24px 0}
 .od-addr .big{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,2.4vw,1.75rem);line-height:1.2;margin:0 0 6px}
 
+.od-host{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,2.4vw,26px);align-items:center;
+  margin-top:30px;padding-top:28px;border-top:1px solid var(--rule)}
+.od-host img{width:clamp(88px,10vw,116px);height:clamp(88px,10vw,116px);object-fit:cover;object-position:center 18%;display:block}
+.od-host h3{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,1.8vw,1.4rem);margin:8px 0 2px;line-height:1.15}
+.od-host .role{font-family:Archivo,sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--zinc);margin:0 0 10px}
+.od-host p.line{margin:0;font-size:1rem;line-height:1.55;color:var(--slate)}
+
 @media(max-width:860px){
   .od-hero{min-height:auto;padding-top:clamp(90px,22vh,150px)}
   .od-strip{grid-template-columns:1fr 1fr}
@@ -62,7 +69,7 @@
 <div class="wrap od-hero-in">
 <span class="label" style="color:rgba(251,250,248,.76)">Open Day &middot; Adelaide Hills</span>
 <h1>Step inside the one you&rsquo;ve been imagining.</h1>
-<p class="od-sub">For one afternoon only, a just-completed Templeton Built homestead in the Adelaide Hills opens its doors &mdash; furnished, lit, and ready to walk through.</p>
+<p class="od-sub">For one afternoon only, a Templeton Built homestead in the Adelaide Hills opens its doors &mdash; furnished, lit, and ready to walk through.</p>
 <div class="od-meta">
 <div><span class="k">When</span><span class="v">Saturday 14 November</span></div>
 <div><span class="k">Time</span><span class="v">2:00pm &ndash; 4:00pm</span></div>
@@ -87,13 +94,22 @@
 <div class="od-reg">
 <div class="rev">
 <span class="label">Saturday 14 November</span>
-<h2 style="margin:18px 0 16px">Two hours<br>in the real thing.</h2>
-<p class="muted">Walk the rooms, open the joinery, stand under the ceilings. Photographs flatten a house; standing in one tells you what you actually want. Then talk to the two people who would run your build &mdash; about your site, your plans, and what a number like this is made of.</p>
+<h2 style="margin:18px 0 16px">Come and talk<br>to the team.</h2>
+<p class="muted">Walk the rooms, open the joinery, stand under the ceilings &mdash; photographs flatten a house, and standing in one tells you what you actually want. Jordan and Paul will be there throughout, so bring your site, your plans, or a number someone else has quoted you.</p>
 <ul class="lp-points" style="margin-top:26px">
 <li>Registration is essential &mdash; numbers are limited and the address is sent on registration</li>
-<li>Jordan and Paul will both be there for the full two hours</li>
 <li>No appointment, no pressure, no sales script</li>
 </ul>
+
+<div class="od-host">
+<img src="/wp-content/uploads/2026/08/Jordan-Templeton-scaled.jpg" alt="Jordan Templeton" decoding="async" width="116" height="116">
+<div>
+<span class="label">Hosted by</span>
+<h3>Jordan Templeton</h3>
+<p class="role">General Manager / Builder</p>
+<p class="line">Walk the build, ask questions, and see our work live and in person.</p>
+</div>
+</div>
 </div>
 
 <form class="od-form rev" method="post" action="/api/enquiry">

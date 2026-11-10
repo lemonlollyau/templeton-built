@@ -101,8 +101,8 @@ p{margin:0 0 1.1em}
 /* Wordmark asset is white: no filter over dark heroes, inverted to ink on light backgrounds. */
 .nav.over:not(.solid) .logo img{filter:none}
 .nav.solid .logo img{filter:brightness(0)}
-.lp-nav .logo img{filter:brightness(0);height:36px}
-@media(max-width:600px){.logo img{height:32px}.lp-nav .logo img{height:30px}}
+.lp-nav .logo img{filter:brightness(0);height:52px}
+@media(max-width:600px){.logo img{height:32px}.lp-nav .logo img{height:40px}}
 
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{
