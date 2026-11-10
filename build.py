@@ -74,14 +74,8 @@ NAV = (
     '<a href="/projects">Projects</a><a href="/custom-homes">Custom homes</a>'
     '<a href="/extensions">Extensions</a><a href="/renovations">Renovations</a>'
     '<a href="/interior-design">Interior design</a>'
-    '<a href="/open-book">Pricing</a>'
-    '<div class="nav-group">'
-    '<button type="button" class="nav-group-btn" id="about-btn"'
-    ' aria-expanded="false" aria-controls="about-drop">About</button>'
-    '<div class="nav-drop" id="about-drop">'
-    '<a href="/about">About Templeton Built</a>'
-    '<a href="/journal">Journal</a>'
-    '</div></div>'
+    '<a href="/open-book">Pricing</a><a href="/about">About</a>'
+    '<a href="/contact" class="nav-cta">Start a conversation</a>'
     "</div></div></nav>\n"
 )
 

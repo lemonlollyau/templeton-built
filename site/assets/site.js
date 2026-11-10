@@ -34,29 +34,6 @@
     }
   }
 
-  // --- nav dropdown -------------------------------------------------------
-  var groupBtn = document.getElementById('about-btn');
-  var groupDrop = document.getElementById('about-drop');
-  if (groupBtn && groupDrop) {
-    var setDrop = function (open) {
-      groupDrop.classList.toggle('open', open);
-      groupBtn.setAttribute('aria-expanded', String(open));
-    };
-    groupBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      setDrop(groupBtn.getAttribute('aria-expanded') !== 'true');
-    });
-    document.addEventListener('click', function (e) {
-      if (!groupDrop.contains(e.target) && e.target !== groupBtn) setDrop(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && groupBtn.getAttribute('aria-expanded') === 'true') {
-        setDrop(false);
-        groupBtn.focus();
-      }
-    });
-  }
-
   // --- scroll reveals -----------------------------------------------------
   var revs = document.querySelectorAll('.rev');
   if (revs.length) {
