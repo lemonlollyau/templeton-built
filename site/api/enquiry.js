@@ -12,8 +12,11 @@
  *                    (comma-separated for several recipients)
  *   ENQUIRY_FROM     verified sender, e.g. "Templeton Built Website <site@templetonbuilt.com.au>"
  *
- * Optional, for the log: NOTION_TOKEN and NOTION_DB_ID. Without them the
- * email still sends and the enquiry is written to the function log.
+ * Optional:
+ *   ENQUIRY_ROUTES   JSON, to send particular forms somewhere other than
+ *                    ENQUIRY_TO — see routeFor() below
+ *   NOTION_TOKEN     } the enquiry log. Without them the email still sends
+ *   NOTION_DB_ID     } and the enquiry is written to the function log.
  *
  * If the send fails the visitor is shown an honest error with the phone
  * number, rather than a thank-you page for an enquiry that went nowhere.
@@ -49,6 +52,38 @@ const LABELS = [
 ];
 
 const SKIP = new Set(['_form', '_hp', '_next', 's']);
+
+/**
+ * Per-form delivery, for forms that shouldn't land in the general inbox.
+ *
+ * ENQUIRY_ROUTES is JSON keyed by a form's _form value:
+ *   {"Hills Open Day": {"to": "jordan@…", "cc": "indy@…"}}
+ *
+ * "to" and "cc" each take one address or a comma-separated list. Addresses
+ * live in the environment rather than the repo, and anything not listed
+ * here goes to ENQUIRY_TO as before. Bad JSON is logged and ignored rather
+ * than thrown — a typo in a config value must not stop enquiries arriving.
+ */
+function routeFor(form) {
+  const raw = process.env.ENQUIRY_ROUTES;
+  if (!raw) return {};
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    console.error('ENQUIRY_ROUTES is not valid JSON; using ENQUIRY_TO for every form');
+    return {};
+  }
+  if (!parsed || typeof parsed !== 'object') return {};
+  const route = parsed[form];
+  return route && typeof route === 'object' ? route : {};
+}
+
+/** One address, a comma-separated list, or an array — always an array. */
+function addresses(value) {
+  const list = Array.isArray(value) ? value : String(value ?? '').split(',');
+  return list.map((s) => String(s).trim()).filter(Boolean);
+}
 
 const DEFAULT_NEXT = '/thank-you';
 
@@ -197,6 +232,10 @@ module.exports = async function handler(req, res) {
     `Submitted: ${submitted} (Adelaide)`,
   ].join('\n');
 
+  const route = routeFor(source);
+  const to = addresses(route.to).length ? addresses(route.to) : addresses(ENQUIRY_TO);
+  const cc = addresses(route.cc);
+
   try {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -206,7 +245,8 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         from: ENQUIRY_FROM,
-        to: ENQUIRY_TO.split(',').map((s) => s.trim()).filter(Boolean),
+        to,
+        ...(cc.length ? { cc } : {}),
         reply_to: email,
         subject: `New Website Enquiry — ${who}`,
         text,
