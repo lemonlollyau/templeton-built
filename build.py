@@ -73,6 +73,7 @@ NAV = (
     '<div class="nav-links" id="links">'
     '<a href="/projects">Projects</a><a href="/custom-homes">Custom homes</a>'
     '<a href="/extensions">Extensions</a><a href="/renovations">Renovations</a>'
+    '<a href="/interior-design">Interior design</a>'
     '<a href="/open-book">Pricing</a><a href="/about">About</a>'
     '<a href="/journal">Journal</a>'
     '<a href="/contact" class="nav-cta">Start a conversation</a>'

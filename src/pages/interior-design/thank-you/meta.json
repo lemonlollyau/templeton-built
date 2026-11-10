@@ -1,0 +1,24 @@
+{
+  "slug": "interior-design/thank-you",
+  "title": "Thanks \u2014 Rachel has your details | Templeton Built",
+  "description": "Your interior design enquiry has reached Rachel Mao at Templeton Built.",
+  "canonical": "https://templetonbuilt.com.au/interior-design/thank-you",
+  "robots": "noindex, nofollow",
+  "og": {
+    "locale": "en_AU",
+    "type": "website",
+    "title": "Thanks \u2014 Rachel has your details",
+    "description": "Your interior design enquiry has reached Rachel Mao at Templeton Built.",
+    "url": "https://templetonbuilt.com.au/interior-design/thank-you",
+    "site_name": "Templeton Built"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Thanks \u2014 Rachel has your details",
+    "description": "Your interior design enquiry has reached Rachel Mao at Templeton Built."
+  },
+  "schema": [],
+  "is_article": false,
+  "nav": true,
+  "foot_top": false
+}

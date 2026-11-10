@@ -33,6 +33,9 @@ const LABELS = [
   ['day', 'Preferred day'],
   ['time', 'Preferred time'],
   ['guests', 'How many coming'],
+  ['rooms', 'Rooms or areas'],
+  ['package', 'Package of interest'],
+  ['timing', 'Timing'],
   ['budget', 'Budget'],
   ['message', 'Message'],
 ];
@@ -72,9 +75,20 @@ function parse(raw, contentType = '') {
   if (contentType.includes('application/json')) {
     try { return JSON.parse(raw); } catch { return {}; }
   }
+  // Checkbox groups repeat the same name, so collect repeats rather than
+  // letting the last one win.
   const out = {};
-  for (const [k, v] of new URLSearchParams(raw)) out[k] = v;
+  for (const [k, v] of new URLSearchParams(raw)) {
+    if (k in out) out[k] = [].concat(out[k], v);
+    else out[k] = v;
+  }
   return out;
+}
+
+/** One value or a checkbox group, as a single readable string. */
+function flatten(value) {
+  if (Array.isArray(value)) return value.map((v) => String(v).trim()).filter(Boolean).join(', ');
+  return value === undefined || value === null ? '' : String(value).trim();
 }
 
 function errorPage(res, status, heading, detail) {
@@ -142,12 +156,13 @@ module.exports = async function handler(req, res) {
   const lines = [];
   for (const [key, label] of LABELS) {
     if (used.has(key)) continue;
-    const value = (data[key] || '').trim();
+    const value = flatten(data[key]);
     if (value) { lines.push(`${label}: ${value}`); used.add(key); }
   }
   for (const [key, value] of Object.entries(data)) {
-    if (used.has(key) || SKIP.has(key) || !String(value).trim()) continue;
-    lines.push(`${key}: ${String(value).trim()}`);
+    const text = flatten(value);
+    if (used.has(key) || SKIP.has(key) || !text) continue;
+    lines.push(`${key}: ${text}`);
   }
 
   const who = [data.first, data.last].filter(Boolean).join(' ') || data.name || email;
