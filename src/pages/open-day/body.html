@@ -1,0 +1,118 @@
+<style>
+.od-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:26px 0 30px;padding:18px 0;border-block:1px solid rgba(251,250,248,.22)}
+.od-meta div{display:flex;flex-direction:column;gap:5px}
+.od-meta .k{font-family:Archivo,sans-serif;font-weight:500;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,250,248,.6)}
+.od-meta .v{font-family:Archivo,sans-serif;font-weight:600;font-size:1.05rem;color:var(--paper)}
+.od-form .f{margin-bottom:18px}
+.od-form .f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.od-form label{display:block;margin-bottom:7px;font-family:Archivo,sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--zinc)}
+.od-form input,.od-form select,.od-form textarea{width:100%;padding:13px 15px;border:1px solid rgba(22,35,43,.22);background:#fff;font-family:var(--text);font-size:1rem;border-radius:0;-webkit-appearance:none;appearance:none}
+.od-form.card{background:var(--paper)!important;padding:clamp(24px,3vw,38px)}
+.od-form button{width:100%;justify-content:center;cursor:pointer}
+.od-see{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border-block:1px solid var(--rule)}
+.od-see>div{background:var(--paper);padding:clamp(24px,3vw,34px)}
+.od-see h3{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:10px 0 8px}
+.od-see p{margin:0;font-size:1rem;line-height:1.6;color:var(--slate)}
+.od-where{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+.od-map{border:1px solid var(--rule);width:100%;aspect-ratio:4/3;display:block;filter:grayscale(1) contrast(1.05);transition:filter .4s ease}
+.od-map:hover{filter:none}
+.od-addr{border-left:2px solid var(--bluestone);padding-left:22px;margin:24px 0}
+.od-addr .big{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,2.4vw,1.75rem);line-height:1.2;margin:0 0 6px}
+@media(max-width:860px){.od-where{grid-template-columns:1fr}.od-form .f2{grid-template-columns:1fr}}
+</style>
+
+<header class="lp-nav"><div class="wrap lp-nav-in"><a href="/" class="logo"><img src="/wp-content/uploads/2026/10/TempletonBuilt-Logo-White-Horiz.png" alt="Templeton Built" width="120" height="40"></a><a href="tel:1800955111" class="lp-phone">1800 955 111</a></div></header>
+
+<section class="lp-hero"><div class="lp-hero-img"><img decoding="async" src="/wp-content/uploads/2025/06/Living-1.1.jpg" alt="Interior of a completed Templeton Built home"></div><div class="wrap lp-grid">
+<div>
+<span class="label" style="color:rgba(251,250,248,.72)">Open Day &middot; Adelaide Hills</span>
+<h1 style="margin-top:22px">Walk through a finished one.</h1>
+<p class="phero-sub">For one afternoon, a completed and fully furnished Templeton Built custom home in the Hills is open to people planning a build of their own.</p>
+
+<div class="od-meta">
+<div><span class="k">When</span><span class="v">Saturday 14 November</span></div>
+<div><span class="k">Time</span><span class="v">2:00pm &ndash; 4:00pm</span></div>
+<div><span class="k">Where</span><span class="v">Prospect Hill, SA</span></div>
+</div>
+
+<ul class="lp-points">
+<li>Registration is essential &mdash; numbers are limited and the address is sent on registration</li>
+<li>Jordan and Paul will both be there to talk through plans, sites and costs</li>
+<li>No appointment, no pressure, no sales script</li>
+</ul>
+</div>
+
+<form id="register" class="card rev od-form" method="post" action="/api/enquiry">
+<input type="hidden" name="_form" value="Hills Open Day — 14 Nov 2026">
+<input type="hidden" name="_next" value="/open-day-confirmed">
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Do not fill this in<input name="_hp" tabindex="-1" autocomplete="off"></label></div>
+<h3 style="margin-bottom:4px">Register your interest</h3>
+<p class="fineprint" style="margin-bottom:18px">We&rsquo;ll send you the address and parking details straight away.</p>
+<div class="f"><label for="odn">Name</label><input id="odn" name="name" required autocomplete="name"></div>
+<div class="f f2">
+<div><label for="ode">Email</label><input id="ode" name="email" type="email" required autocomplete="email"></div>
+<div><label for="odp">Phone</label><input id="odp" name="phone" type="tel" required autocomplete="tel"></div>
+</div>
+<div class="f f2">
+<div><label for="odg">How many coming</label><select id="odg" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option></select></div>
+<div><label for="ods">Where you&rsquo;re up to</label><select id="ods" name="stage"><option value="" selected disabled>Please select</option><option>Just an idea</option><option>Looking for land</option><option>Have a site, no design</option><option>Working with a designer</option><option>Ready to price</option><option>Just having a look</option></select></div>
+</div>
+<button class="btn btn-solid" type="submit">Register for the open day</button>
+<p class="fineprint" style="margin-top:14px">Saturday 14 November, 2&ndash;4pm. We&rsquo;ll only contact you about this event unless you ask us to.</p>
+</form>
+</div></section>
+
+<div class="lp-trust"><span>Third-generation Adelaide builder</span><span>Licence BLD183145</span><span>Open-book pricing</span><span>Since 2001</span></div>
+
+<section class="pad-sm"><div class="wrap">
+<div class="sec-head" style="margin-bottom:40px">
+<span class="label">Worth a close look</span>
+<h2 class="rev">Details you can&rsquo;t judge from a photograph.</h2>
+</div>
+<div class="od-see">
+<div class="rev"><span class="label">01</span><h3>The curved stone island</h3><p>Stone takes a curve badly unless the substrate is built for it. Worth seeing how the join sits and what it costs to do properly.</p></div>
+<div class="rev"><span class="label">02</span><h3>Herringbone floors</h3><p>A pattern that lives or dies on the setout. Stand in the doorway and look down the run.</p></div>
+<div class="rev"><span class="label">03</span><h3>Double glazing</h3><p>You can hear the difference the moment the door closes &mdash; which is the part a specification sheet can&rsquo;t tell you.</p></div>
+<div class="rev"><span class="label">04</span><h3>The two-way fireplace</h3><p>One firebox, two rooms. Straightforward to want, less straightforward to frame and flue.</p></div>
+</div>
+</div></section>
+
+<section class="pad-sm stone"><div class="wrap">
+<div class="od-where">
+<div class="rev">
+<span class="label">Getting there</span>
+<h2 style="margin:18px 0 18px">In the Hills,<br>past Meadows.</h2>
+<p>The home is in <strong>Prospect Hill</strong>, roughly 34km from the Adelaide CBD &mdash; through Stirling and Echunga, or up through Meadows. Allow about three quarters of an hour from the city.</p>
+<div class="od-addr">
+<p class="big">Prospect Hill, SA 5201</p>
+<p class="fineprint" style="margin:0">Full street address and parking details are sent when you register.</p>
+</div>
+<a class="btn btn-solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=Prospect+Hill+SA+5201" target="_blank" rel="noopener">Check the drive from your place</a>
+</div>
+<div class="rev">
+<iframe class="od-map" title="Map showing Prospect Hill, South Australia in relation to Adelaide" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=138.48%2C-35.34%2C138.92%2C-34.86&amp;layer=mapnik&amp;marker=-35.21629%2C138.73529"></iframe>
+<p class="fineprint" style="margin-top:12px">Prospect Hill marked; Adelaide is top-left.</p>
+</div>
+</div>
+</div></section>
+
+<section class="pad-sm"><div class="wrap">
+<div class="sec-head" style="margin-bottom:36px">
+<span class="label">Who you&rsquo;ll meet</span>
+<h2 class="rev">The two people who&rsquo;d run your build.</h2>
+</div>
+<div class="tb-next">
+<div class="n rev"><span class="label">Jordan Templeton</span><h3 style="margin:12px 0 10px">General Manager / Builder</h3><p class="muted">Third generation, qualified carpenter, licensed builder. Jordan runs every job and walks every site weekly.</p></div>
+<div class="n rev"><span class="label">Paul Kassara</span><h3 style="margin:12px 0 10px">Estimator &amp; Procurement Manager</h3><p class="muted">Paul prices and procures every Templeton Built project, and holds the supplier quotes behind every line of the costing schedule.</p></div>
+<div class="n rev"><span class="label">Bring your plans</span><h3 style="margin:12px 0 10px">Sketches welcome</h3><p class="muted">If you have drawings, a site, or a number you&rsquo;ve been quoted elsewhere, bring it. That&rsquo;s a more useful conversation than a tour.</p></div>
+</div>
+</div></section>
+
+<section class="pad-sm stone"><div class="wrap" style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center">
+<div class="rev">
+<span class="label">Saturday 14 November</span>
+<h2 style="margin:16px 0 10px">Two hours, one finished house.</h2>
+<p class="muted" style="margin:0">Registration closes when we reach capacity.</p>
+</div>
+<div class="rev"><a href="#register" class="btn btn-solid">Register your interest</a></div>
+</div></section>

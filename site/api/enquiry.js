@@ -34,7 +34,24 @@ const LABELS = [
   ['message', 'Message'],
 ];
 
-const SKIP = new Set(['_form', '_hp', 's']);
+const SKIP = new Set(['_form', '_hp', '_next', 's']);
+
+const DEFAULT_NEXT = '/thank-you';
+
+/**
+ * Where to send the browser after a successful submission.
+ *
+ * Only a path on this site is allowed — anything with a scheme, a host, or a
+ * backslash is discarded. Letting a form post an arbitrary destination here
+ * would turn the endpoint into an open redirect.
+ */
+function nextPath(value) {
+  if (typeof value !== 'string') return DEFAULT_NEXT;
+  const path = value.trim();
+  if (!path.startsWith('/') || path.startsWith('//')) return DEFAULT_NEXT;
+  if (/[\\:]|[\x00-\x1f]/.test(path)) return DEFAULT_NEXT;
+  return path;
+}
 
 function readBody(req) {
   return new Promise((resolve, reject) => {
@@ -98,7 +115,7 @@ module.exports = async function handler(req, res) {
   // Return the thank-you page so the bot sees success and doesn't retry.
   if (data._hp) {
     res.statusCode = 303;
-    res.setHeader('Location', '/thank-you');
+    res.setHeader('Location', nextPath(data._next));
     return res.end();
   }
 
@@ -174,6 +191,6 @@ module.exports = async function handler(req, res) {
   }
 
   res.statusCode = 303;
-  res.setHeader('Location', '/thank-you');
+  res.setHeader('Location', nextPath(data._next));
   return res.end();
 };

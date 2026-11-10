@@ -10,3 +10,6 @@ wp-config.php
 .env
 .env.*
 *.zip
+
+# stray screenshot output from tooling runs
+undefined/

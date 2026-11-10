@@ -89,6 +89,10 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://templetonbuilt.com.au/open-day</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://templetonbuilt.com.au/projects</loc>
     <changefreq>monthly</changefreq>
   </url>

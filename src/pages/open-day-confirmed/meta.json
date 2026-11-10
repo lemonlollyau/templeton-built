@@ -1,0 +1,24 @@
+{
+  "slug": "open-day-confirmed",
+  "title": "You're registered | Hills Show Home Open Day | Templeton Built",
+  "description": "Your registration for the Templeton Built Hills Show Home Open Day, Saturday 14 November, 2–4pm.",
+  "canonical": "https://templetonbuilt.com.au/open-day-confirmed",
+  "robots": "noindex, nofollow",
+  "og": {
+    "locale": "en_AU",
+    "type": "website",
+    "title": "You're registered | Templeton Built Open Day",
+    "description": "Hills Show Home Open Day, Saturday 14 November, 2–4pm.",
+    "url": "https://templetonbuilt.com.au/open-day-confirmed",
+    "site_name": "Templeton Built"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "You're registered | Templeton Built Open Day",
+    "description": "Hills Show Home Open Day, Saturday 14 November, 2–4pm."
+  },
+  "schema": [],
+  "is_article": false,
+  "nav": false,
+  "foot_top": false
+}

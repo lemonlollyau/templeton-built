@@ -441,3 +441,9 @@ body:has(.phero-plain) .nav.over:not(.solid) .nav-toggle{color:var(--bluestone)}
 .prose ol{list-style:decimal;padding-left:1.2em}
 .prose li{margin-bottom:.5em}
 .prose img,main img{max-width:100%;height:auto}
+
+/* ---------- Landing-page form heading ----------
+   The hero sets light type for the dark background, which the form card
+   inherited — so its heading was paper-on-paper and invisible on all five
+   landing pages. The card is light; its heading is ink. */
+.lp-hero form h3{color:var(--bluestone)}
