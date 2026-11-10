@@ -1,4 +1,13 @@
 <style>
+/* ---- event header: logo + the event tag, nothing to click away to ---- */
+.od-nav{position:absolute;top:0;left:0;right:0;z-index:5;padding-block:clamp(18px,2.6vh,32px)}
+.od-nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.od-nav .logo{display:block}
+.od-nav .logo img{height:clamp(40px,4.4vw,52px);width:auto;display:block}
+.od-nav-tag{font-family:Archivo,sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(251,250,248,.82);white-space:nowrap}
+@media(max-width:520px){.od-nav-tag{font-size:10px;letter-spacing:.12em}.od-nav-tag .rest{display:none}}
+
 /* ---- hero: photography first ---- */
 .od-hero{position:relative;min-height:min(94vh,900px);display:flex;align-items:flex-end;overflow:hidden;background:var(--bluestone-deep)}
 .od-hero-img{position:absolute;inset:0}
@@ -6,7 +15,7 @@
 .od-hero-scrim{position:absolute;inset:0;background:
   linear-gradient(to top,rgba(14,23,29,.92) 0%,rgba(14,23,29,.58) 40%,rgba(14,23,29,.16) 72%,rgba(14,23,29,.3) 100%),
   linear-gradient(to right,rgba(14,23,29,.5) 0%,rgba(14,23,29,.18) 48%,transparent 78%)}
-.od-hero-in{position:relative;z-index:2;width:100%;padding-block:clamp(44px,6vh,78px)}
+.od-hero-in{position:relative;z-index:2;width:100%;padding-top:clamp(120px,16vh,170px);padding-bottom:clamp(44px,6vh,78px)}
 .od-hero h1{color:var(--paper);margin:18px 0 0;max-width:16ch;text-wrap:balance}
 .od-hero .od-sub{color:rgba(251,250,248,.84);font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.6;max-width:46ch;margin:18px 0 0}
 .od-meta{display:flex;flex-wrap:wrap;gap:14px clamp(28px,4vw,56px);margin:30px 0 0;padding:20px 0;border-top:1px solid rgba(251,250,248,.26);border-bottom:1px solid rgba(251,250,248,.26);max-width:720px}
@@ -62,10 +71,14 @@
 </style>
 
 <section class="od-hero">
+<header class="od-nav"><div class="wrap od-nav-in">
+<a href="/" class="logo" aria-label="Templeton Built home"><img src="/wp-content/uploads/2026/10/TempletonBuilt-Logo-White-Horiz.png" alt="Templeton Built" width="150" height="50"></a>
+<span class="od-nav-tag">Open Day<span class="rest"> &middot; Adelaide Hills</span></span>
+</div></header>
+
 <div class="od-hero-img"><img src="/wp-content/uploads/2026/11/hills-show-home-front.jpg" alt="A white Templeton Built homestead in the Adelaide Hills at dusk, verandah lights on" fetchpriority="high" decoding="async"></div>
 <div class="od-hero-scrim"></div>
 <div class="wrap od-hero-in">
-<span class="label" style="color:rgba(251,250,248,.76)">Open Day &middot; Adelaide Hills</span>
 <h1>Step inside the one you&rsquo;ve been imagining.</h1>
 <p class="od-sub">For one afternoon only, a Templeton Built homestead in the Adelaide Hills opens its doors &mdash; furnished, lit, and ready to walk through.</p>
 <div class="od-meta">

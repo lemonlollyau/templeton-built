@@ -26,10 +26,22 @@
 <!-- analytics: paste GTM or GA4 snippet here -->
 </head>
 <body>
-<nav class="nav over" id="nav"><div class="wrap nav-in"><a href="/" class="logo" aria-label="Templeton Built home"><img src="/wp-content/uploads/2026/10/TempletonBuilt-Logo-White-Horiz.png" alt="Templeton Built" width="120" height="40"></a><button class="nav-toggle" id="toggle" aria-label="Open menu" aria-expanded="false"><svg width="26" height="14" viewBox="0 0 26 14" fill="none" aria-hidden="true"><path d="M0 1h26M0 13h26" stroke="currentColor" stroke-width="1.4"></path></svg></button><div class="nav-links" id="links"><a href="/projects">Projects</a><a href="/custom-homes">Custom homes</a><a href="/extensions">Extensions</a><a href="/renovations">Renovations</a><a href="/open-book">Pricing</a><a href="/about">About</a><a href="/journal">Journal</a><a href="/contact" class="nav-cta">Start a conversation</a></div></div></nav>
 
 <main id="main">
 <style>
+/* ---- event header: logo + the event tag, nothing to click away to ---- */
+.od-nav{position:absolute;top:0;left:0;right:0;z-index:5;padding-block:clamp(18px,2.6vh,32px)}
+.od-nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.od-nav .logo{display:block}
+.od-nav .logo img{height:clamp(40px,4.4vw,52px);width:auto;display:block}
+.od-nav-tag{font-family:Archivo,sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(251,250,248,.82);white-space:nowrap}
+@media(max-width:520px){.od-nav-tag{font-size:10px;letter-spacing:.12em}.od-nav-tag .rest{display:none}}
+.od-nav{position:static;background:var(--paper);border-bottom:1px solid var(--rule)}
+.od-nav .logo img{filter:brightness(0)}
+.od-nav-tag{color:var(--zinc)}
+.phero.phero-plain{padding-top:clamp(56px,7vh,84px)!important}
+
 .odc-card{border:1px solid var(--rule);background:var(--paper);padding:clamp(26px,3.5vw,44px);margin:34px 0}
 .odc-addr{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.18;margin:0 0 6px;text-wrap:balance}
 .odc-when{font-family:Archivo,sans-serif;font-weight:500;font-size:1.05rem;color:var(--slate);margin:0 0 26px}
@@ -40,6 +52,11 @@
 .odc-rows p{margin:0;font-size:.98rem;line-height:1.6;color:var(--slate)}
 .odc-map{border:1px solid var(--rule);width:100%;aspect-ratio:16/10;display:block;margin-top:34px}
 </style>
+
+<header class="od-nav"><div class="wrap od-nav-in">
+<a href="/" class="logo" aria-label="Templeton Built home"><img src="/wp-content/uploads/2026/10/TempletonBuilt-Logo-White-Horiz.png" alt="Templeton Built" width="150" height="50"></a>
+<span class="od-nav-tag">Open Day<span class="rest"> &middot; Adelaide Hills</span></span>
+</div></header>
 
 <section class="phero phero-plain"><div class="wrap phero-in">
 <span class="label">You&rsquo;re registered</span>

@@ -19,6 +19,6 @@
   },
   "schema": [],
   "is_article": false,
-  "nav": true,
+  "nav": false,
   "foot_top": false
 }
