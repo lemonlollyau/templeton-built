@@ -2,18 +2,26 @@
  * Enquiry form handler.
  *
  * Every enquiry form on the site POSTs here. The submission is formatted
- * into a plain-text email and sent via Resend, then the browser is sent on
- * to /thank-you with a 303 so a refresh can't resubmit it.
+ * into a plain-text email and sent via Resend, recorded in the enquiry log
+ * (see _log.js), then the browser is sent on to /thank-you with a 303 so a
+ * refresh can't resubmit it.
  *
  * Required environment variables (Vercel → Settings → Environment Variables):
  *   RESEND_API_KEY   API key from resend.com
- *   ENQUIRY_TO       where enquiries are delivered, e.g. hello@templetonbuilt.com.au
+ *   ENQUIRY_TO       where enquiries are delivered, e.g. info@templetonbuilt.com.au
  *                    (comma-separated for several recipients)
  *   ENQUIRY_FROM     verified sender, e.g. "Templeton Built Website <site@templetonbuilt.com.au>"
  *
+ * Optional, for the log: NOTION_TOKEN and NOTION_DB_ID. Without them the
+ * email still sends and the enquiry is written to the function log.
+ *
  * If the send fails the visitor is shown an honest error with the phone
  * number, rather than a thank-you page for an enquiry that went nowhere.
+ * A logging failure is not shown — the enquiry has been delivered, and the
+ * visitor has nothing to do about our bookkeeping.
  */
+
+const { logEnquiry } = require('./_log.js');
 
 const PHONE = '1800 955 111';
 const FALLBACK_EMAIL = 'hello@templetonbuilt.com.au';
@@ -151,23 +159,31 @@ module.exports = async function handler(req, res) {
       'Something is misconfigured on our side, and we would rather tell you than pretend it arrived.');
   }
 
+  // One flattened value per submitted field, shared by the email and the log.
+  const fields = {};
+  for (const [key, value] of Object.entries(data)) {
+    if (SKIP.has(key)) continue;
+    const text = flatten(value);
+    if (text) fields[key] = text;
+  }
+
   // Build the email body: known fields in order, then anything else.
   const used = new Set();
   const lines = [];
   for (const [key, label] of LABELS) {
-    if (used.has(key)) continue;
-    const value = flatten(data[key]);
-    if (value) { lines.push(`${label}: ${value}`); used.add(key); }
+    if (used.has(key) || !fields[key]) continue;
+    lines.push(`${label}: ${fields[key]}`);
+    used.add(key);
   }
-  for (const [key, value] of Object.entries(data)) {
-    const text = flatten(value);
-    if (used.has(key) || SKIP.has(key) || !text) continue;
+  for (const [key, text] of Object.entries(fields)) {
+    if (used.has(key)) continue;
     lines.push(`${key}: ${text}`);
   }
 
   const who = [data.first, data.last].filter(Boolean).join(' ') || data.name || email;
   const source = data._form || 'website';
-  const submitted = new Date().toLocaleString('en-AU', {
+  const received = new Date();
+  const submitted = received.toLocaleString('en-AU', {
     timeZone: 'Australia/Adelaide', dateStyle: 'full', timeStyle: 'short',
   });
 
@@ -207,6 +223,17 @@ module.exports = async function handler(req, res) {
     return errorPage(res, 502, "Your enquiry didn't send.",
       "We couldn't reach our mail service just then.");
   }
+
+  // The enquiry is delivered; now record it. Awaited, because the function
+  // can be frozen the moment the response goes out, but it resolves either
+  // way and is capped at a few seconds.
+  await logEnquiry({
+    fields,
+    who,
+    email,
+    source,
+    receivedISO: received.toISOString(),
+  });
 
   res.statusCode = 303;
   res.setHeader('Location', nextPath(data._next));
