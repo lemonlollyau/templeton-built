@@ -41,6 +41,11 @@ const SELECT_COLUMNS = {
   budget: 'Budget',
   timing: 'Timing',
   package: 'Package',
+  // Open day bookings. These have columns of their own so the two days can
+  // be grouped and counted, rather than read out of a block of text.
+  day: 'Preferred day',
+  time: 'Preferred time',
+  guests: 'Guests',
 };
 
 // Fields that already have a column of their own. Anything else is collected
