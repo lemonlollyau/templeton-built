@@ -24,7 +24,7 @@
 const { logEnquiry } = require('./_log.js');
 
 const PHONE = '1800 955 111';
-const FALLBACK_EMAIL = 'hello@templetonbuilt.com.au';
+const FALLBACK_EMAIL = 'info@templetonbuilt.com.au';
 
 // Field order and labels for the email body. Anything not listed here is
 // appended afterwards, so a new form field still comes through.

@@ -149,7 +149,7 @@ BACK = """<div class="back">
   <div class="rule"></div>
   <div class="label">Talk to Jordan or Paul</div>
   <p class="big" style="margin-top:5mm">1800 955 111</p>
-  <p class="big">hello@templetonbuilt.com.au</p>
+  <p class="big">info@templetonbuilt.com.au</p>
   <p style="margin-top:8mm">12 Stirling Street, Thebarton SA 5033<br>
   templetonbuilt.com.au</p>
   <div class="rule"></div>
