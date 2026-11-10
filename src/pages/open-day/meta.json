@@ -1,14 +1,14 @@
 {
   "slug": "open-day",
-  "title": "Hills Show Home Open Day | Saturday 14 November | Templeton Built",
-  "description": "Step inside a Templeton Built homestead in the Adelaide Hills. Saturday 14 November, 2\u20134pm, Prospect Hill. Registration essential.",
+  "title": "Hills Show Home Open Days | 20\u201321 November | Templeton Built",
+  "description": "Step inside a Templeton Built homestead in the Adelaide Hills. Friday 20 and Saturday 21 November, Prospect Hill, by appointment.",
   "canonical": "https://templetonbuilt.com.au/open-day",
   "robots": "",
   "og": {
     "locale": "en_AU",
     "type": "website",
-    "title": "Step inside the one you've been imagining \u2014 Hills Open Day, 14 November",
-    "description": "A Templeton Built homestead in the Adelaide Hills opens for one afternoon. Saturday 14 November, 2\u20134pm, Prospect Hill. Registration essential.",
+    "title": "Step inside the one you've been imagining \u2014 Hills Open Days, 20\u201321 November",
+    "description": "A Templeton Built homestead in the Adelaide Hills opens over two days. Friday 20 and Saturday 21 November, Prospect Hill. By appointment.",
     "url": "https://templetonbuilt.com.au/open-day",
     "site_name": "Templeton Built",
     "image": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg",
@@ -17,12 +17,13 @@
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Step inside the one you've been imagining \u2014 Hills Open Day, 14 November",
-    "description": "A Templeton Built homestead in the Adelaide Hills opens for one afternoon. Saturday 14 November, 2\u20134pm.",
+    "title": "Step inside the one you've been imagining \u2014 Hills Open Days, 20\u201321 November",
+    "description": "A Templeton Built homestead in the Adelaide Hills opens over two days. Friday 20 and Saturday 21 November. By appointment.",
     "image": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg"
   },
   "schema": [
-    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Hills Show Home Open Day\",\"description\":\"A fully furnished Templeton Built custom home in the Adelaide Hills, open for one afternoon to people planning a build of their own. Registration essential; the street address is sent on registration.\",\"startDate\":\"2026-11-14T14:00:00+10:30\",\"endDate\":\"2026-11-14T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":-35.21629,\"longitude\":138.73529}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"AUD\",\"availability\":\"https://schema.org/InStock\",\"url\":\"https://templetonbuilt.com.au/open-day\",\"validFrom\":\"2026-11-10T09:00:00+10:30\"},\"isAccessibleForFree\":true,\"maximumAttendeeCapacity\":60}"
+    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Hills Show Home Open Day \\u2014 Friday\",\"description\":\"A fully furnished Templeton Built custom home in the Adelaide Hills, open to people planning a build of their own. By appointment; the street address is sent when the appointment is confirmed.\",\"startDate\":\"2026-11-20\",\"endDate\":\"2026-11-20\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":-35.21629,\"longitude\":138.73529}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"AUD\",\"availability\":\"https://schema.org/InStock\",\"url\":\"https://templetonbuilt.com.au/open-day\",\"validFrom\":\"2026-11-10T09:00:00+10:30\"},\"isAccessibleForFree\":true}",
+    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Hills Show Home Open Day \\u2014 Saturday\",\"description\":\"A fully furnished Templeton Built custom home in the Adelaide Hills, open to people planning a build of their own. By appointment; the street address is sent when the appointment is confirmed.\",\"startDate\":\"2026-11-21\",\"endDate\":\"2026-11-21\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":-35.21629,\"longitude\":138.73529}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"AUD\",\"availability\":\"https://schema.org/InStock\",\"url\":\"https://templetonbuilt.com.au/open-day\",\"validFrom\":\"2026-11-10T09:00:00+10:30\"},\"isAccessibleForFree\":true}"
   ],
   "is_article": false,
   "nav": false,

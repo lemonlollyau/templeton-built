@@ -30,6 +30,9 @@ const LABELS = [
   ['type', 'Project type'],
   ['project', 'Project type'],
   ['stage', 'Where they are up to'],
+  ['day', 'Preferred day'],
+  ['time', 'Preferred time'],
+  ['guests', 'How many coming'],
   ['budget', 'Budget'],
   ['message', 'Message'],
 ];
