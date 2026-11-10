@@ -124,7 +124,13 @@ async function writeToNotion(entry) {
     });
     if (!r.ok) {
       console.error('Enquiry log rejected', r.status, await r.text());
-      return { logged: false, reason: `notion http ${r.status}` };
+      // Notion answers 404 both for a database that doesn't exist and for one
+      // the integration hasn't been granted, so say so rather than leaving
+      // someone to guess which.
+      const hint = r.status === 404
+        ? 'notion 404 — check the database is shared with the integration (••• → Connections) and that NOTION_DB_ID matches it'
+        : `notion http ${r.status}`;
+      return { logged: false, reason: hint };
     }
     return { logged: true };
   } catch (err) {
