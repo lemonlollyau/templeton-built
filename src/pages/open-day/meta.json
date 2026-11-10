@@ -1,28 +1,28 @@
 {
   "slug": "open-day",
   "title": "Hills Show Home Open Day | Saturday 14 November | Templeton Built",
-  "description": "Walk through a completed, fully furnished Templeton Built custom home at Prospect Hill. Saturday 14 November, 2–4pm. Registration essential.",
+  "description": "Step inside a just-completed Templeton Built homestead in the Adelaide Hills. Saturday 14 November, 2\u20134pm, Prospect Hill. Registration essential.",
   "canonical": "https://templetonbuilt.com.au/open-day",
   "robots": "",
   "og": {
     "locale": "en_AU",
     "type": "website",
-    "title": "Hills Show Home Open Day — Saturday 14 November, 2–4pm",
-    "description": "A completed and fully furnished Templeton Built custom home in the Adelaide Hills, open for one afternoon to people planning a build. Prospect Hill, SA. Registration essential.",
+    "title": "Step inside the one you've been imagining \u2014 Hills Open Day, 14 November",
+    "description": "A just-completed Templeton Built homestead in the Adelaide Hills opens for one afternoon. Saturday 14 November, 2\u20134pm, Prospect Hill. Registration essential.",
     "url": "https://templetonbuilt.com.au/open-day",
     "site_name": "Templeton Built",
-    "image": "https://templetonbuilt.com.au/wp-content/uploads/2025/06/Living-1.1.jpg",
-    "image:secure_url": "https://templetonbuilt.com.au/wp-content/uploads/2025/06/Living-1.1.jpg",
-    "image:alt": "Interior of a completed Templeton Built home"
+    "image": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg",
+    "image:secure_url": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg",
+    "image:alt": "A white Templeton Built homestead in the Adelaide Hills at dusk"
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Hills Show Home Open Day — Saturday 14 November, 2–4pm",
-    "description": "A completed Templeton Built custom home in the Adelaide Hills, open for one afternoon. Prospect Hill, SA. Registration essential.",
-    "image": "https://templetonbuilt.com.au/wp-content/uploads/2025/06/Living-1.1.jpg"
+    "title": "Step inside the one you've been imagining \u2014 Hills Open Day, 14 November",
+    "description": "A just-completed Templeton Built homestead in the Adelaide Hills opens for one afternoon. Saturday 14 November, 2\u20134pm.",
+    "image": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg"
   },
   "schema": [
-    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Hills Show Home Open Day\",\"description\":\"A completed and fully furnished Templeton Built custom home in the Adelaide Hills, open for one afternoon to people planning a build of their own. Registration essential; the street address is sent on registration.\",\"startDate\":\"2026-11-14T14:00:00+10:30\",\"endDate\":\"2026-11-14T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2025/06/Living-1.1.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":-35.21629,\"longitude\":138.73529}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"AUD\",\"availability\":\"https://schema.org/InStock\",\"url\":\"https://templetonbuilt.com.au/open-day\",\"validFrom\":\"2026-11-10T09:00:00+10:30\"},\"isAccessibleForFree\":true,\"maximumAttendeeCapacity\":60}"
+    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Hills Show Home Open Day\",\"description\":\"A completed and fully furnished Templeton Built custom home in the Adelaide Hills, open for one afternoon to people planning a build of their own. Registration essential; the street address is sent on registration.\",\"startDate\":\"2026-11-14T14:00:00+10:30\",\"endDate\":\"2026-11-14T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":-35.21629,\"longitude\":138.73529}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"AUD\",\"availability\":\"https://schema.org/InStock\",\"url\":\"https://templetonbuilt.com.au/open-day\",\"validFrom\":\"2026-11-10T09:00:00+10:30\"},\"isAccessibleForFree\":true,\"maximumAttendeeCapacity\":60}"
   ],
   "is_article": false,
   "nav": false,

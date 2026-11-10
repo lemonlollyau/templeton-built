@@ -447,3 +447,13 @@ body:has(.phero-plain) .nav.over:not(.solid) .nav-toggle{color:var(--bluestone)}
    inherited — so its heading was paper-on-paper and invisible on all five
    landing pages. The card is light; its heading is ink. */
 .lp-hero form h3{color:var(--bluestone)}
+
+/* ---------- .lp-points on a light background ----------
+   The list was written for the dark landing-page hero, so its text and
+   rule colours are paper. Outside a dark hero it rendered as bare dashes
+   on an empty line. Restate it for light sections. */
+:where(section:not(.lp-hero):not(.od-hero)) .lp-points li{
+  color:var(--slate);
+  border-bottom-color:var(--rule);
+}
+:where(section:not(.lp-hero):not(.od-hero)) .lp-points li::before{color:var(--zinc)}
