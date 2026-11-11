@@ -13,6 +13,8 @@
  *   ENQUIRY_FROM     verified sender, e.g. "Templeton Built Website <site@templetonbuilt.com.au>"
  *
  * Optional:
+ *   FORM_TOKEN_SECRET  signs the token each form carries — see _spam.js.
+ *                      While unset, token checking is skipped.
  *   ENQUIRY_ROUTES   JSON, to send particular forms somewhere other than
  *                    ENQUIRY_TO — see routeFor() below
  *   NOTION_TOKEN     } the enquiry log. Without them the email still sends
@@ -25,6 +27,7 @@
  */
 
 const { logEnquiry } = require('./_log.js');
+const { tokenProblem, spamReasons } = require('./_spam.js');
 
 const PHONE = '1800 955 111';
 const FALLBACK_EMAIL = 'info@templetonbuilt.com.au';
@@ -51,7 +54,7 @@ const LABELS = [
   ['message', 'Message'],
 ];
 
-const SKIP = new Set(['_form', '_hp', '_next', 's']);
+const SKIP = new Set(['_form', '_hp', '_next', '_t', 's']);
 
 /**
  * Per-form delivery, for forms that shouldn't land in the general inbox.
@@ -179,6 +182,22 @@ module.exports = async function handler(req, res) {
     return res.end();
   }
 
+  // The page mints a signed token on load and carries it in a hidden field.
+  // No token means the submission never rendered the page — which is how
+  // every piece of spam this form receives arrives. Unlike the content
+  // rules below this is answered honestly rather than silently, because a
+  // missing token can also mean JavaScript didn't run, and a real person
+  // deserves to know their enquiry didn't go through.
+  const badToken = tokenProblem(data._t);
+  if (badToken) {
+    console.log('enquiry rejected: token', JSON.stringify({
+      reason: badToken, form: data._form || 'website', email: (data.email || '').trim(),
+    }));
+    return errorPage(res, 400, "We couldn't send that.",
+      'Your browser session could not be verified. If you have JavaScript turned off, '
+      + 'that will be why — reload the page and try again, or just call us.');
+  }
+
   const email = (data.email || '').trim();
   if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return errorPage(res, 400, 'That email address looks wrong.',
@@ -231,6 +250,19 @@ module.exports = async function handler(req, res) {
     `Form: ${source}`,
     `Submitted: ${submitted} (Adelaide)`,
   ].join('\n');
+
+  // Content that no genuine enquiry would carry. Answered with the ordinary
+  // thank-you so whoever sent it learns nothing, but written to the log in
+  // full so a false positive can be found and the rule corrected.
+  const reasons = spamReasons(fields, who);
+  if (reasons.length) {
+    console.log('enquiry discarded as spam', JSON.stringify({
+      reasons, form: source, who, email, message: fields.message || '',
+    }));
+    res.statusCode = 303;
+    res.setHeader('Location', nextPath(data._next));
+    return res.end();
+  }
 
   const route = routeFor(source);
   const to = addresses(route.to).length ? addresses(route.to) : addresses(ENQUIRY_TO);
