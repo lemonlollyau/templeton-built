@@ -510,3 +510,75 @@ body:has(.phero-plain) .nav.over:not(.solid) .nav-toggle{color:var(--bluestone)}
 .id-band p{margin:0;font-family:var(--display);font-weight:600;
   font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--bluestone)}
 @media(max-width:600px){.id-band-in{flex-direction:column;align-items:flex-start}.id-band .btn{width:100%;justify-content:center}}
+
+/* ── Interior design: image-led blocks ─────────────────────────────────────
+   Rachel's brief was that people meet interior design emotionally before
+   they read anything, so these sections give the photography the room and
+   keep the words to a caption. */
+
+.id-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.4vw,20px);
+  margin-top:clamp(28px,4vw,52px)}
+.idg{margin:0;overflow:hidden;background:var(--limestone)}
+.idg img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.idg-wide{grid-column:span 2}
+.idg-wide img{aspect-ratio:16/7}
+@media (max-width:760px){
+  .id-gallery{grid-template-columns:1fr}
+  .idg-wide{grid-column:span 1}
+  .idg img,.idg-wide img{aspect-ratio:4/3}
+}
+
+/* The scheme → drawings → room sequence. The board and the drawings are
+   documents, not photographs: in a three-up grid they shrink to texture and
+   prove nothing, so each stage gets a full row and the drawing gets the
+   width it needs to actually be read. */
+.flow{margin-top:clamp(30px,4vw,52px);display:flex;flex-direction:column;
+  gap:clamp(34px,4.5vw,72px)}
+.flow-step{margin:0;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);
+  gap:clamp(22px,3.5vw,56px);align-items:center}
+.flow-step:nth-child(even){direction:rtl}
+.flow-step:nth-child(even) > *{direction:ltr}
+.flow-media{display:block;margin:0;background:var(--white);border:1px solid var(--rule)}
+.flow-media img{display:block;width:100%;height:auto}
+.flow-step.is-photo .flow-media{border:0;background:var(--limestone)}
+.flow-step figcaption p{margin:10px 0 0;color:var(--slate);font-size:1.02rem;line-height:1.6}
+.flow-zoom{display:inline-block;margin-top:14px;font-family:var(--label-font);font-size:.72rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--zinc);
+  border-bottom:1px solid var(--rule);padding-bottom:3px}
+a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--bluestone)}
+@media (max-width:860px){
+  .flow-step{grid-template-columns:1fr;gap:18px}
+  .flow-step:nth-child(even){direction:ltr}
+}
+
+/* Who the service is for. */
+.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border-block:1px solid var(--rule);margin-top:40px}
+.aud{background:var(--limestone);padding:clamp(24px,2.8vw,36px)}
+.aud h3{font-family:var(--display);font-weight:600;font-size:clamp(1.05rem,1.5vw,1.25rem);
+  margin:0;line-height:1.2}
+.aud p{margin:12px 0 0;color:var(--slate);font-size:1rem;line-height:1.55}
+@media (max-width:860px){.audience{grid-template-columns:1fr}}
+
+/* Package refinements: a unit under the price, the exclusion note, and the
+   middle tier marked, since that is the one most clients should land on. */
+.pkg-unit{display:block;font-family:var(--label-font);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--zinc);margin:6px 0 10px}
+.pkg-excl{margin:14px 0 22px;color:var(--zinc);font-size:.92rem;line-height:1.5;font-style:italic}
+.pkg-feature{background:var(--white);box-shadow:0 0 0 1px var(--bluestone) inset}
+.pkg-feature .label{color:var(--bluestone)}
+.pkg-terms{margin-top:clamp(26px,3vw,40px);max-width:var(--max-prose)}
+.pkg-terms p{margin:0 0 12px;color:var(--slate);font-size:.98rem;line-height:1.6}
+.pkg-terms p:last-child{margin-bottom:0}
+
+/* Two short testimonials on the dark band. */
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,64px)}
+.quotes figure{margin:0}
+.quotes blockquote{margin:0;font-family:var(--text);font-size:clamp(1.05rem,1.6vw,1.35rem);
+  line-height:1.5;color:var(--white);opacity:.94}
+.quotes blockquote::before{content:"\201C"}
+.quotes blockquote::after{content:"\201D"}
+.quotes figcaption{margin-top:18px;font-family:var(--label-font);font-size:.74rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--zinc)}
+@media (max-width:760px){.quotes{grid-template-columns:1fr}}
+.pkg-terms strong{font-family:var(--display);font-weight:600;color:var(--bluestone)}
