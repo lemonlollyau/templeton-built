@@ -107,6 +107,64 @@
     });
   }
 
+
+  // --- open day promotion --------------------------------------------------
+  // Dated on purpose: once the open day has been and gone this stops showing,
+  // so nobody is invited to an event that already happened. The build also
+  // leaves the markup off pages where it would interrupt a conversion.
+  (function () {
+    var ENDS = Date.parse('2026-11-21T18:00:00+10:30');
+    var DONE = 'tb-openday-done';     // dismissed, or already engaged
+    var SEEN = 'tb-openday-seen';     // shown once this visit
+
+    // Storage can throw in private windows; a promotion must never be the
+    // reason a page breaks.
+    var get = function (store, k) { try { return window[store].getItem(k); } catch (e) { return null; } };
+    var set = function (store, k) { try { window[store].setItem(k, '1'); } catch (e) {} };
+
+    var path = location.pathname.replace(/\/$/, '');
+    // Anyone who has reached the open day pages has already had the message.
+    if (path === '/open-day' || path === '/open-day-confirmed') { set('localStorage', DONE); return; }
+
+    var promo = document.getElementById('promo');
+    if (!promo) return;
+    if (Date.now() > ENDS) { promo.remove(); return; }
+    if (get('localStorage', DONE) || get('sessionStorage', SEEN)) { promo.remove(); return; }
+
+    var opened = false;
+    var open = function () {
+      if (opened || !document.body.contains(promo)) return;
+      opened = true;
+      set('sessionStorage', SEEN);
+      if (typeof promo.showModal === 'function') promo.showModal();
+      else promo.setAttribute('open', '');
+      window.removeEventListener('scroll', onScroll);
+    };
+    var onScroll = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY / max > 0.3) open();
+    };
+
+    // Whichever comes first: a little dwell time, or real interest in the page.
+    var timer = setTimeout(open, 9000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    promo.addEventListener('click', function (e) {
+      if (e.target.closest('[data-promo-close]')) {
+        set('localStorage', DONE);
+        promo.close ? promo.close() : promo.removeAttribute('open');
+      } else if (e.target.closest('[data-promo-go]')) {
+        set('localStorage', DONE);
+      } else if (e.target === promo) {
+        // Click on the backdrop area of the dialog itself.
+        set('localStorage', DONE);
+        promo.close ? promo.close() : promo.removeAttribute('open');
+      }
+    });
+    // Escape closes it natively; remember that too.
+    promo.addEventListener('close', function () { set('localStorage', DONE); clearTimeout(timer); });
+  })();
+
   // --- costing schedule: rows settle in sequence --------------------------
   var sheets = document.querySelectorAll('.sheet');
   if (!sheets.length) return;

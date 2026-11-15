@@ -582,3 +582,33 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
   letter-spacing:.14em;text-transform:uppercase;color:var(--zinc)}
 @media (max-width:760px){.quotes{grid-template-columns:1fr}}
 .pkg-terms strong{font-family:var(--display);font-weight:600;color:var(--bluestone)}
+
+/* ── Open day promotion ───────────────────────────────────────────────────
+   A native <dialog>, so focus trapping and Escape come from the browser
+   rather than from us reimplementing them badly. */
+.promo{padding:0;border:0;max-width:min(780px,calc(100vw - 32px));width:100%;
+  background:var(--paper);color:var(--bluestone);box-shadow:0 24px 70px rgba(14,23,29,.28)}
+.promo::backdrop{background:rgba(14,23,29,.52)}
+.promo[open]{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr)}
+.promo-img{overflow:hidden;background:var(--limestone)}
+.promo-img img{display:block;width:100%;height:100%;object-fit:cover}
+.promo-body{padding:clamp(26px,3.4vw,42px)}
+.promo-body h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.1;margin:16px 0 0}
+.promo-body p{margin:14px 0 0;color:var(--slate);font-size:1rem;line-height:1.55}
+.promo-actions{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.promo-no{background:none;border:0;padding:0;cursor:pointer;color:var(--zinc);
+  font-family:var(--label-font);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.promo-no:hover{color:var(--slate)}
+.promo-x{position:absolute;top:10px;right:10px;width:34px;height:34px;display:grid;
+  place-items:center;background:rgba(251,250,248,.9);border:0;cursor:pointer;
+  color:var(--bluestone);border-radius:50%}
+.promo-x:hover{background:var(--paper)}
+@media (max-width:680px){
+  .promo[open]{grid-template-columns:1fr}
+  .promo-img{max-height:168px}
+  .promo-x{background:rgba(251,250,248,.92)}
+}
+@media (prefers-reduced-motion:no-preference){
+  .promo[open]{animation:promo-in .32s cubic-bezier(.22,.61,.36,1) both}
+  @keyframes promo-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}

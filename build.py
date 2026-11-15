@@ -89,6 +89,41 @@ FOOT_TOP = (
 )
 
 
+# ── Open day promotion ────────────────────────────────────────────────────
+# A dated promotion for the 20–21 November open day. site.js removes it after
+# the event, so it cannot outlive the thing it advertises; deleting PROMO
+# below (or emptying PROMO_SKIP) is the manual off switch.
+#
+# Kept off the pages where it would compete with a conversion already in
+# progress: the open day pages themselves, every confirmation page, and the
+# paid-traffic landing pages, which are bought against one specific action.
+PROMO_SKIP = {
+    "open-day", "open-day-confirmed", "thank-you", "guide-sent",
+    "interior-design/thank-you",
+    "lp-custom-homes", "lp-extensions", "lp-renovations",
+    "lp-knockdown-rebuild", "lp-adelaide-hills",
+}
+
+PROMO = (
+    '<dialog class="promo" id="promo" aria-labelledby="promo-h">'
+    '<div class="promo-img"><img src="/wp-content/uploads/2026/11/hills-show-home-front.jpg"'
+    ' alt="" loading="lazy" decoding="async"></div>'
+    '<div class="promo-body">'
+    '<span class="label">Open day &middot; Adelaide Hills</span>'
+    '<h2 id="promo-h">Walk through a home<br>we&rsquo;ve finished.</h2>'
+    '<p>Friday 20 &amp; Saturday 21 November, at Prospect Hill. By appointment, '
+    'so you get the team to yourself rather than a crowd.</p>'
+    '<div class="promo-actions">'
+    '<a class="btn btn-solid" href="/open-day" data-promo-go>Book a time</a>'
+    '<button type="button" class="promo-no" data-promo-close>Not this time</button>'
+    '</div></div>'
+    '<button type="button" class="promo-x" aria-label="Close" data-promo-close>'
+    '<svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true">'
+    '<path d="M1 1l13 13M14 1L1 14" stroke="currentColor" stroke-width="1.5"/></svg>'
+    '</button></dialog>\n'
+)
+
+
 def head_meta(meta: dict) -> dict:
     """Render the per-page head fragments."""
     out = {}
@@ -248,6 +283,8 @@ def build(only: list[str] | None = None) -> None:
             .replace("{{assetver}}", ver)
             .replace("{{nav}}", NAV if meta.get("nav", True) else "")
             .replace("{{foottop}}", FOOT_TOP if meta.get("foot_top") else "")
+            .replace("{{promo}}", "" if slug in PROMO_SKIP
+                      or "noindex" in (meta.get("robots") or "").lower() else PROMO)
             .replace("{{body}}", body)
         )
 
