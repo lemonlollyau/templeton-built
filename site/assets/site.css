@@ -631,7 +631,11 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
 /* Smaller than the global h1: this one shares the frame rather than owning it. */
 .phero-split h1{font-size:clamp(2.4rem,4.4vw,4.2rem);line-height:1.02;max-width:none}
 .phero-split .phero-sub{max-width:38ch}
-/* The Atelier line is the service's own identity — give it presence. */
+/* The Atelier lockup is the service's own identity — give it presence.
+   Width drives it; the aspect ratio on the file keeps the box from jumping
+   before the SVG lands. */
+.phero-split .phero-mark{display:block;width:clamp(186px,17vw,272px);height:auto;
+  margin:0 0 30px}
 .phero-split .label{font-size:.88rem;letter-spacing:.2em;color:rgba(251,250,248,.95);
   margin-bottom:26px}
 @media (max-width:860px){
@@ -641,6 +645,7 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
       rgba(14,23,29,.55) 0%, rgba(14,23,29,.42) 34%,
       rgba(14,23,29,.84) 72%, rgba(14,23,29,.95) 100%)}
   .phero-split h1{max-width:none}
+  .phero-split .phero-mark{width:160px;margin-bottom:22px}
   .phero-split .label{font-size:.78rem}
 }
 
