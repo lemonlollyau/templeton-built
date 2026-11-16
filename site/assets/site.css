@@ -612,3 +612,40 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
   .promo[open]{animation:promo-in .32s cubic-bezier(.22,.61,.36,1) both}
   @keyframes promo-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 }
+
+/* ── Interior design hero: ombré rather than a blanket dim ────────────────
+   The standard .phero drops the photograph to 50% opacity and lays a dark
+   wash over the whole frame — fine for a text-led hero, wasteful when the
+   photograph is the point. Here the image stays at full strength and the
+   shading is pulled across from one side, so the copy has something solid
+   to sit on while most of the room stays visible.
+
+   Note .phero-in carries .wrap too, so constraining IT would centre the
+   column via the wrap's auto margins. The children are constrained instead,
+   which keeps the copy hard left where the gradient is darkest. */
+.phero-split .phero-img img{opacity:1}
+.phero-split::after{
+  background:linear-gradient(97deg,
+    rgba(14,23,29,.95) 0%, rgba(14,23,29,.88) 32%,
+    rgba(14,23,29,.60) 54%, rgba(14,23,29,.16) 78%, rgba(14,23,29,0) 100%)}
+/* Smaller than the global h1: this one shares the frame rather than owning it. */
+.phero-split h1{font-size:clamp(2.4rem,4.4vw,4.2rem);line-height:1.02;max-width:none}
+.phero-split .phero-sub{max-width:38ch}
+/* The Atelier line is the service's own identity — give it presence. */
+.phero-split .label{font-size:.88rem;letter-spacing:.2em;color:rgba(251,250,248,.95);
+  margin-bottom:26px}
+@media (max-width:860px){
+  /* No room alongside, so shade from the bottom and let the copy sit over it. */
+  .phero-split::after{
+    background:linear-gradient(176deg,
+      rgba(14,23,29,.55) 0%, rgba(14,23,29,.42) 34%,
+      rgba(14,23,29,.84) 72%, rgba(14,23,29,.95) 100%)}
+  .phero-split h1{max-width:none}
+  .phero-split .label{font-size:.78rem}
+}
+
+/* Fine print should read as fine print. */
+.pkg-unit{font-size:.66rem;letter-spacing:.12em;margin:5px 0 10px}
+.pkg-excl{font-size:.84rem;line-height:1.45;margin:12px 0 20px}
+.quotes-head{margin-bottom:clamp(26px,3vw,40px)}
+.quotes-head h2{color:var(--paper)}
