@@ -120,10 +120,20 @@ p{margin:0 0 1.1em}
 /* ---------- Hero (home) ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--bluestone-deep)}
 .hero-img{position:absolute;inset:0}
-.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.72;transform:scale(1.06);animation:drift 24s ease-out forwards}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:1;transform:scale(1.06);animation:drift 24s ease-out forwards}
 @keyframes drift{to{transform:scale(1)}}
+/* Same ombré as the inner pages, turned to suit a hero whose copy sits bottom
+   left: the horizontal layer shades the column, the vertical one anchors the
+   foot of the frame and gives the nav something to sit on before it goes
+   solid. Between them the top right corner stays an undimmed photograph. */
 .hero::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(14,23,29,.62) 0%,rgba(14,23,29,.15) 38%,rgba(14,23,29,.88) 100%)}
+  background:
+    linear-gradient(97deg,
+      rgba(14,23,29,.80) 0%, rgba(14,23,29,.68) 34%,
+      rgba(14,23,29,.40) 58%, rgba(14,23,29,.12) 78%, rgba(14,23,29,0) 92%),
+    linear-gradient(180deg,
+      rgba(14,23,29,.40) 0%, rgba(14,23,29,0) 32%,
+      rgba(14,23,29,.18) 60%, rgba(14,23,29,.82) 100%)}
 .hero-in{position:relative;z-index:2;width:100%;padding-bottom:clamp(48px,8vh,96px);color:var(--paper)}
 .hero h1{color:var(--paper);max-width:14ch}
 .hero .label{color:rgba(251,250,248,.72);margin-bottom:26px;display:block}
@@ -134,15 +144,37 @@ p{margin:0 0 1.1em}
 
 /* ---------- Page hero (inner pages) ---------- */
 .phero{position:relative;background:var(--bluestone-deep);color:var(--paper);overflow:hidden;
-  padding:clamp(150px,22vh,240px) 0 clamp(60px,9vh,110px)}
+  padding:clamp(150px,22vh,240px) 0 clamp(60px,9vh,110px);
+  /* A floor under the ombré. Inner-page headlines run large and long enough to
+     reach the lit end of the gradient, and some hero photographs are bright
+     exactly there. Light enough that the right of the frame still reads as a
+     photograph; the interior design hero sets it to none, its headline being
+     short enough to stay in the dark half. */
+  --scrim:rgba(14,23,29,.24)}
 .phero-img{position:absolute;inset:0}
-.phero-img img{width:100%;height:100%;object-fit:cover;opacity:.5}
+/* The photograph runs at full strength and the shade comes in from the left
+   instead, so the copy sits on a dark field while the right of the frame
+   stays a real photograph rather than a dimmed one. */
+.phero-img img{width:100%;height:100%;object-fit:cover;opacity:1}
 .phero::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(14,23,29,.8) 0%,rgba(14,23,29,.5) 55%,rgba(14,23,29,.92) 100%)}
+  background:linear-gradient(97deg,
+    rgba(14,23,29,.95) 0%, rgba(14,23,29,.88) 32%,
+    rgba(14,23,29,.60) 54%, rgba(14,23,29,.16) 78%, rgba(14,23,29,0) 100%),
+    var(--scrim)}
 .phero-in{position:relative;z-index:2}
 .phero h1{color:var(--paper);max-width:16ch}
 .phero .label{color:rgba(251,250,248,.7);display:block;margin-bottom:24px}
-.phero-sub{max-width:52ch;margin-top:26px;font-size:clamp(1.05rem,1.5vw,1.28rem);line-height:1.55;color:rgba(251,250,248,.85)}
+/* Kept inside the darkest part of the gradient — a longer measure would run
+   the last words out into the lit half of the photograph. */
+.phero-sub{max-width:44ch;margin-top:26px;font-size:clamp(1.05rem,1.5vw,1.28rem);line-height:1.55;color:rgba(251,250,248,.85)}
+@media (max-width:860px){
+  /* No room alongside, so shade from the bottom and let the copy sit over it. */
+  .phero::after{
+    background:linear-gradient(176deg,
+      rgba(14,23,29,.55) 0%, rgba(14,23,29,.42) 34%,
+      rgba(14,23,29,.84) 72%, rgba(14,23,29,.95) 100%)}
+  .phero h1{max-width:none}
+}
 .phero-plain{background:var(--paper);color:var(--bluestone);padding:clamp(140px,20vh,210px) 0 clamp(40px,6vh,70px)}
 .phero-plain h1,.phero-plain .label{color:inherit}
 .phero-plain .label{color:var(--zinc)}
@@ -623,11 +655,7 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
    Note .phero-in carries .wrap too, so constraining IT would centre the
    column via the wrap's auto margins. The children are constrained instead,
    which keeps the copy hard left where the gradient is darkest. */
-.phero-split .phero-img img{opacity:1}
-.phero-split::after{
-  background:linear-gradient(97deg,
-    rgba(14,23,29,.95) 0%, rgba(14,23,29,.88) 32%,
-    rgba(14,23,29,.60) 54%, rgba(14,23,29,.16) 78%, rgba(14,23,29,0) 100%)}
+.phero-split{--scrim:transparent}
 /* Smaller than the global h1: this one shares the frame rather than owning it. */
 .phero-split h1{font-size:clamp(2.4rem,4.4vw,4.2rem);line-height:1.02;max-width:none}
 .phero-split .phero-sub{max-width:38ch}
@@ -639,12 +667,6 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
 .phero-split .label{font-size:.88rem;letter-spacing:.2em;color:rgba(251,250,248,.95);
   margin-bottom:26px}
 @media (max-width:860px){
-  /* No room alongside, so shade from the bottom and let the copy sit over it. */
-  .phero-split::after{
-    background:linear-gradient(176deg,
-      rgba(14,23,29,.55) 0%, rgba(14,23,29,.42) 34%,
-      rgba(14,23,29,.84) 72%, rgba(14,23,29,.95) 100%)}
-  .phero-split h1{max-width:none}
   .phero-split .phero-mark{width:160px;margin-bottom:22px}
   .phero-split .label{font-size:.78rem}
 }
