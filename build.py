@@ -90,7 +90,7 @@ FOOT_TOP = (
 
 
 # ── Open day promotion ────────────────────────────────────────────────────
-# A dated promotion for the 20–21 November open day. site.js removes it after
+# A dated promotion for the 20–21 November open house (walk-in, no booking). site.js removes it after
 # the event, so it cannot outlive the thing it advertises; deleting PROMO
 # below (or emptying PROMO_SKIP) is the manual off switch.
 #
@@ -109,12 +109,12 @@ PROMO = (
     '<div class="promo-img"><img src="/wp-content/uploads/2026/11/hills-show-home-front.jpg"'
     ' alt="" loading="lazy" decoding="async"></div>'
     '<div class="promo-body">'
-    '<span class="label">Open day &middot; Adelaide Hills</span>'
+    '<span class="label">Open house &middot; Adelaide Hills</span>'
     '<h2 id="promo-h">Walk through a home<br>we&rsquo;ve finished.</h2>'
-    '<p>Friday 20 &amp; Saturday 21 November, at Prospect Hill. By appointment, '
-    'so you get the team to yourself rather than a crowd.</p>'
+    '<p>Friday 20 &amp; Saturday 21 November, at Prospect Hill. Drop in during '
+    'opening hours &mdash; no booking needed.</p>'
     '<div class="promo-actions">'
-    '<a class="btn btn-solid" href="/open-day" data-promo-go>Book a time</a>'
+    '<a class="btn btn-solid" href="/open-day" data-promo-go>See times &amp; address</a>'
     '<button type="button" class="promo-no" data-promo-close>Not this time</button>'
     '</div></div>'
     '<button type="button" class="promo-x" aria-label="Close" data-promo-close>'
