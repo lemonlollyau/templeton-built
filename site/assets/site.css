@@ -677,21 +677,5 @@ a.flow-media:hover + figcaption .flow-zoom,.flow-zoom:hover{color:var(--blueston
 .quotes-head{margin-bottom:clamp(26px,3vw,40px)}
 .quotes-head h2{color:var(--paper)}
 
-/* ── Interior design gallery: captions and credits ────────────────────────
-   Each photograph names its project, and carries the architect and
-   photographer credit where one is owed (Birch Rd is Black Rabbit's design,
-   photographed by Christopher Morrison, used under licence). Kept to label
-   type so the photographs still lead. The image height is fixed by its
-   aspect ratio rather than the cell, so a two-line caption beside a one-line
-   caption can't stretch the photograph above it. */
-.id-gallery{row-gap:clamp(26px,3vw,40px);align-items:start}
-.id-gallery .idg{background:none;overflow:visible}
-.id-gallery .idg img{height:auto;background:var(--limestone)}
-.idg figcaption{display:flex;flex-direction:column;gap:4px;padding-top:12px}
-.idg figcaption b{font-family:var(--label-font);font-weight:600;font-size:.72rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--bluestone)}
-.idg figcaption span{font-family:var(--label-font);font-weight:400;font-size:.76rem;letter-spacing:.02em;
-  line-height:1.5;color:var(--zinc)}
-
 /* Prices are shown as the figure followed by + GST. */
 .pkg-gst{font-size:.5em;font-weight:500;letter-spacing:.02em;color:var(--slate);white-space:nowrap}
