@@ -114,8 +114,9 @@
   // leaves the markup off pages where it would interrupt a conversion.
   (function () {
     var ENDS = Date.parse('2026-11-28T18:00:00+10:30');
-    var DONE = 'tb-openday-done';     // dismissed, or already engaged
-    var SEEN = 'tb-openday-seen';     // shown once this visit
+    // Keys carry the dates so a dismissal of the old 20-21 Nov dates doesn't hide the new ones.
+    var DONE = 'tb-openday-2728-done';     // dismissed, or already engaged
+    var SEEN = 'tb-openday-2728-seen';     // shown once this visit
 
     // Storage can throw in private windows; a promotion must never be the
     // reason a page breaks.
