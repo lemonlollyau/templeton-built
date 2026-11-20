@@ -113,7 +113,7 @@
   // so nobody is invited to an event that already happened. The build also
   // leaves the markup off pages where it would interrupt a conversion.
   (function () {
-    var ENDS = Date.parse('2026-11-21T18:00:00+10:30');
+    var ENDS = Date.parse('2026-11-28T18:00:00+10:30');
     var DONE = 'tb-openday-done';     // dismissed, or already engaged
     var SEEN = 'tb-openday-seen';     // shown once this visit
 

@@ -1,14 +1,14 @@
 {
   "slug": "open-day",
-  "title": "Show Home Open House | Fri 20 & Sat 21 November | Templeton Built",
-  "description": "Walk through a finished Templeton Built home in Prospect Hill, Adelaide Hills. Friday 20 and Saturday 21 November. Drop in, no booking needed.",
+  "title": "Show Home Open House | Fri 27 & Sat 28 November | Templeton Built",
+  "description": "Walk through a finished Templeton Built home in Prospect Hill, Adelaide Hills. Friday 27 and Saturday 28 November. Drop in, no booking needed.",
   "canonical": "https://templetonbuilt.com.au/open-day",
   "robots": "",
   "og": {
     "locale": "en_AU",
     "type": "website",
-    "title": "Templeton Built Show Home Open House \u2014 Prospect Hill, 20\u201321 November",
-    "description": "Walk through a finished Templeton Built home in the Adelaide Hills. Drop in Friday 20 or Saturday 21 November. No booking needed.",
+    "title": "Templeton Built Show Home Open House \u2014 Prospect Hill, 27\u201328 November",
+    "description": "Walk through a finished Templeton Built home in the Adelaide Hills. Drop in Friday 27 or Saturday 28 November. No booking needed.",
     "url": "https://templetonbuilt.com.au/open-day",
     "site_name": "Templeton Built",
     "image": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg",
@@ -17,13 +17,13 @@
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Templeton Built Show Home Open House \u2014 Prospect Hill, 20\u201321 November",
-    "description": "Walk through a finished Templeton Built home in the Adelaide Hills. Drop in Friday 20 or Saturday 21 November. No booking needed.",
+    "title": "Templeton Built Show Home Open House \u2014 Prospect Hill, 27\u201328 November",
+    "description": "Walk through a finished Templeton Built home in the Adelaide Hills. Drop in Friday 27 or Saturday 28 November. No booking needed.",
     "image": "https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg"
   },
   "schema": [
-    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Show Home Open House \u2014 Friday\",\"description\":\"A finished Templeton Built home in the Adelaide Hills, open to anyone planning a build of their own. Drop in during opening hours; no booking needed.\",\"startDate\":\"2026-11-20T10:00:00+10:30\",\"endDate\":\"2026-11-20T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"266 Black Nursery Road\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"isAccessibleForFree\":true}",
-    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Show Home Open House \u2014 Saturday\",\"description\":\"A finished Templeton Built home in the Adelaide Hills, open to anyone planning a build of their own. Drop in during opening hours; no booking needed.\",\"startDate\":\"2026-11-21T10:00:00+10:30\",\"endDate\":\"2026-11-21T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"266 Black Nursery Road\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"isAccessibleForFree\":true}"
+    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Show Home Open House \u2014 Friday\",\"description\":\"A finished Templeton Built home in the Adelaide Hills, open to anyone planning a build of their own. Drop in during opening hours; no booking needed.\",\"startDate\":\"2026-11-27T10:00:00+10:30\",\"endDate\":\"2026-11-27T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"266 Black Nursery Road\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"isAccessibleForFree\":true}",
+    "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Templeton Built Show Home Open House \u2014 Saturday\",\"description\":\"A finished Templeton Built home in the Adelaide Hills, open to anyone planning a build of their own. Drop in during opening hours; no booking needed.\",\"startDate\":\"2026-11-28T10:00:00+10:30\",\"endDate\":\"2026-11-28T16:00:00+10:30\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"image\":[\"https://templetonbuilt.com.au/wp-content/uploads/2026/11/hills-show-home-front.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Templeton Built show home, Prospect Hill\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"266 Black Nursery Road\",\"addressLocality\":\"Prospect Hill\",\"addressRegion\":\"SA\",\"postalCode\":\"5201\",\"addressCountry\":\"AU\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Templeton Built\",\"url\":\"https://templetonbuilt.com.au\",\"telephone\":\"1800955111\"},\"isAccessibleForFree\":true}"
   ],
   "is_article": false,
   "nav": false,
