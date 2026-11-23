@@ -3,6 +3,22 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.templetonbuilt.com.au"
+        }
+      ],
+      "destination": "https://templetonbuilt.com.au/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/projects/hawthorn-renovation",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
       "source": "/home-renovations-adelaide",
       "destination": "/renovations",
       "permanent": true
