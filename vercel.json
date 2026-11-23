@@ -9,6 +9,8 @@
       "permanent": true
     },
 
+    { "source": "/projects/hawthorn-renovation", "destination": "/projects", "permanent": true },
+
     { "source": "/home-renovations-adelaide", "destination": "/renovations", "permanent": true },
     { "source": "/house-extensions-adelaide", "destination": "/extensions", "permanent": true },
     { "source": "/custom-new-homes", "destination": "/custom-homes", "permanent": true },

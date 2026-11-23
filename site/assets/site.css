@@ -330,6 +330,14 @@ form .btn{justify-content:center;margin-top:10px;font-family:var(--label-font)}
   padding:clamp(36px,5vh,64px) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .cs-fact .label{display:block;margin-bottom:10px}
 .cs-fact b{font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:-.02em}
+/* Sits below the last paragraph of Rachel's bio, so it needs more air above
+   it than the paragraph rhythm gives on its own. */
+.meet-cta{margin-top:clamp(22px,3vw,34px)}
+
+/* Architect and photographer credits under a project gallery. Quiet by
+   design — it belongs to the pictures, not to the page's own voice. */
+.credit{margin-top:clamp(14px,2vw,22px);font-size:.88rem;line-height:1.5;
+  color:var(--zinc)}
 .cs-gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,32px)}
 .cs-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .cs-gallery .wide{grid-column:1/-1;aspect-ratio:21/9}
