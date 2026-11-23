@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.templetonbuilt.com.au"
+        }
+      ],
+      "destination": "https://templetonbuilt.com.au/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
