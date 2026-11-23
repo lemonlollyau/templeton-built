@@ -214,13 +214,15 @@
 <script>
 (function () {
   var dl = window.dataLayer = window.dataLayer || [];
-  // Count the taps: the dataLayer event (for Tag Manager), plus direct sends to
-  // GA4 and the Meta Pixel so the numbers exist without any GTM setup.
-  // Either tool may be blocked or not loaded yet; tracking must never break the page.
-  var track = function (ev, metaEv, placement) {
-    dl.push({ event: ev, placement: placement });
-    try { if (typeof window.gtag === 'function') window.gtag('event', ev, { placement: placement, send_to: 'G-GSZJFKTFYG' }); } catch (e) {}
-    try { if (typeof window.fbq === 'function') window.fbq('trackCustom', metaEv, { placement: placement }); } catch (e) {}
+  // Count the taps. One gtag event does both jobs: GA4 records it, and the
+  // Meta Pixel tag in GTM forwards the same event to Meta under the same name.
+  // (A separate dataLayer push or fbq call would make Meta count each tap twice.)
+  // Tracking may be blocked or not loaded yet; it must never break the page.
+  var track = function (ev, placement) {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', ev, { placement: placement, send_to: 'G-GSZJFKTFYG' });
+      else dl.push({ event: ev, placement: placement });
+    } catch (e) {}
   };
   // One tap shows the address in place; the button makes way for it.
   document.querySelectorAll('.js-addr').forEach(function (btn) {
@@ -232,12 +234,12 @@
       btn.setAttribute('aria-expanded', 'true');
       btn.hidden = true;
       box.focus({ preventScroll: true });
-      track('open_house_show_address', 'OpenHouseShowAddress', box.id);
+      track('open_house_show_address', box.id);
     });
   });
   document.querySelectorAll('.js-dir').forEach(function (a) {
     a.addEventListener('click', function () {
-      track('open_house_directions', 'OpenHouseDirections', a.closest('.od-addr-box').id);
+      track('open_house_directions', a.closest('.od-addr-box').id);
     });
   });
   // Sessions drop off the page once they have finished, as long as a later
